@@ -1,5 +1,5 @@
 import { createSlice } from "@reduxjs/toolkit";
-import toast from "react-hot-toast";
+// import toast from "react-hot-toast";
 
 const initialState = {
   pastes: localStorage.getItem("pastes")
@@ -15,7 +15,7 @@ export const pasteSlice = createSlice({
       const paste = action.payload;
       state.pastes.push(paste);
       localStorage.setItem("pastes", JSON.stringify(state.pastes));
-      toast("paste Created successfully");
+      // toast("paste Created successfully");
     },
     updateToPastes: (state, action) => {
       const paste = action.payload;
@@ -26,7 +26,7 @@ export const pasteSlice = createSlice({
 
         localStorage.setItem("pastes", JSON.stringify(state.pastes));
 
-        toast.success("paste updated");
+        // toast.success("paste updated");
       }
     },
     resetAllPastes: (state, action) => {
@@ -46,7 +46,7 @@ export const pasteSlice = createSlice({
         state.pastes.splice(index, 1);
 
         localStorage.setItem("pastes", JSON.stringify(state.pastes));
-        toast.success("Paste deleted");
+        // toast.success("Paste deleted");
       } 
         
       },
